@@ -29,6 +29,7 @@ jobs:
       run: ./gradlew build
 
     - name: check if docker is installed
+      if: contains(github.event.pull_request.labels.*.name, 'get_version')
       run: docker --version
 
 
